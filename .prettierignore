@@ -1,0 +1,4 @@
+app/.next
+node_modules
+public
+.yarn

@@ -1,7 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   return (
@@ -30,7 +30,7 @@ const Home: NextPage = () => {
 
           <a href="https://nextjs.org/learn" className={styles.card}>
             <h2>YES &rarr;</h2>
-            <p>GH ACTIONS</p>
+            <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
 
           <a
@@ -66,7 +66,7 @@ const Home: NextPage = () => {
         </a>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

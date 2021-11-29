@@ -5,7 +5,8 @@
     "lint": "next lint",
     "dev": "next dev -p 3001",
     "build": "next build",
-    "start": "next start -p 8000"
+    "start": "next start -p 8000",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "next": "12.0.4",
@@ -17,6 +18,15 @@
     "@types/react": "^17.0.37",
     "eslint": "7",
     "eslint-config-next": "12.0.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "2.5.0",
     "typescript": "^4.5.2"
+  },
+  "lint-staged": {
+    "*.{yml,yaml,json,md}": "prettier --write",
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
