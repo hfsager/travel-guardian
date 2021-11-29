@@ -20,7 +20,7 @@ jobs:
 
       # Build Docker image
       - name: Docker build
-        run: docker login --${{ secrets.DOCKER_USERNAME }}=_ --${{ secrets.DOCKER_PASSWORD }}=${{ secrets.HEROKU_API_KEY }} registry.heroku.com
+        run: docker login --username=_ --password=${{ secrets.HEROKU_API_KEY }} registry.heroku.com
 
       # Push the Docker image to Heroku Container Registry
       - name: Publish
