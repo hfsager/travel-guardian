@@ -8,4 +8,4 @@ COPY . /app
 
 RUN yarn install --production
 
-CMD ["node", "src/index.js"]
+CMD echo "Heroku"
