@@ -8,4 +8,4 @@ COPY . /app
 
 RUN yarn install --production
 
-CMD echo "Heroku"
+CMD [docker run]
