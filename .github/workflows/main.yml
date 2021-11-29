@@ -20,6 +20,7 @@ jobs:
 
       # Build Docker image
       - name: Docker build
+      - run: yarn start
 
       # Push the Docker image to Heroku Container Registry
       - name: Publish
