@@ -8,4 +8,4 @@ COPY . /app
 
 RUN yarn install --production
 
-CMD [docker run]
+CMD [yarn start]
