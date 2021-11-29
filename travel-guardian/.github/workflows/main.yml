@@ -1,0 +1,17 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: 9c3aebc5-87d2-4abb-a4a0-fd2088243989
+          heroku_app_name: travel-guardian
+          heroku_email: sophia.sager@outlook.de
