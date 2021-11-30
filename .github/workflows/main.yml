@@ -1,5 +1,4 @@
 name: Deploy to Heroku
-  run: bash ./.github/workflows/scripts/deploy-heroku.sh
 
 on:
   push:
