@@ -1,29 +1,19 @@
 name: Deploy to Heroku
+  run: bash ./.github/workflows/scripts/deploy-heroku.sh
 
 on:
   push:
-    branches: [main]
-
-#set environment variables
-env:
-  HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-  APP_NAME: ${{ 'travel-guardian' }}
+    branches:
+      - master
 
 jobs:
-  deploy:
-    name: Deploy to Heroku
-    runs-on: ubuntu-18.04
+  build:
+    runs-on: ubuntu-latest
     steps:
-      # Clone the repository
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      # Build Docker image
-      - name: Docker build
-        run: docker login --username=_ --password=${{ secrets.HEROKU_API_KEY }} registry.heroku.com
-
-      # Push the Docker image to Heroku Container Registry
-      - name: Publish
-        run: |
-          heroku container:push web -a travel-guardian
-          heroku container:release web -a travel-guardian
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: travel-guardian
+          heroku_email: sophia.sager@outlook.de
+          usedocker: true
