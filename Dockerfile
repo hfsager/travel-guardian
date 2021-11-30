@@ -6,6 +6,8 @@ WORKDIR /app
 
 COPY . /app
 
-RUN yarn install --production
+RUN yarn install 
 
-CMD [next start]
+RUN yarn build
+
+CMD yarn start -p $PORT
