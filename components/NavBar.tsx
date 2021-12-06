@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Link from 'next/Link';
-import Image from 'next/Image'
+import { faPaw } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Container = styled('header')`
   display: flex;
@@ -11,22 +12,24 @@ const Container = styled('header')`
   background-color: black;
   color: white;
   border-radius: 5px;
+  font-family: Helvetica;
 `;
 
 const Button = styled.button`
-color: black;
 outline: none;
 border: none;
-padding: 7px 15px 7px 15px;
+padding: 8px 16px 8px 16px;
 text-decoration: none;
-border-radius: 5px;
-background-color: white;
+border-radius: 4px;
+color: white;
+background-color: black;
 font-family: Helvetica;
 font-size: 16px;
 &:hover {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   cursor: pointer;
+  border-color: white;
 },
 
 `
@@ -37,6 +40,8 @@ color: white;
 margin-right: 40px;
 &:hover{
   color: white;
+  cursor: pointer;
+  
 }
 `
 
@@ -57,11 +62,11 @@ const Navbar = () => {
      	   </Link>
         <Button onClick= {()=>alert("This Button Does Nothing")}>Sign Up As A Shelter</Button>
         </div>
+        <FontAwesomeIcon icon={faPaw} size="2x"/>
       <ul>
         <NavLinks style={{marginLeft: "20px"}}>Sign Up</NavLinks>
         <NavLinks style={{marginLeft: "20px"}}>Take me Home</NavLinks>
         <NavLinks style={{marginLeft: "20px"}}>My Dashboard</NavLinks>
-        <NavLinks><Image alt="placeholder" layout='responsive' src="/BananaDog.jpeg" width={150} height={150}/></NavLinks>
       </ul>
     </Container>
     </div>
