@@ -1,14 +1,7 @@
 import type { NextPage } from 'next';
-import Navbar from '../components/NavBar';
-import styled from '@emotion/styled';
+import Head from 'next/head';
+import Image from 'next/image';
 import styles from '../styles/Home.module.css';
-
-const Section = styled.section`
-font-family: Helvetica;
-text-align: center;
-font-size: 70px;
-margin-top: 50px;
-`
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +11,6 @@ const Home: NextPage = () => {
     <h1>Heroku</h1>
     </div>
   );
-};;
+};
 
 export default Home;
