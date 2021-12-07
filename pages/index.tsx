@@ -15,6 +15,7 @@ const Home: NextPage = () => {
     <div className={styles.container}>
     <Navbar/>
     <Section>THIS IS HOME</Section>
+    <h1>Heroku</h1>
     </div>
   );
 };;
