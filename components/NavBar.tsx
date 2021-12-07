@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Link from 'next/Link';
+import Link from 'next/link';
 import { faPaw } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
