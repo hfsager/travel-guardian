@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Navbar from '../components/Navbar';
 import styled from '@emotion/styled';
-import styles from '../styles/Home.module.css';
+import {Global, css} from '@emotion/react'
 
 const Section = styled.section`
 font-family: Helvetica;
