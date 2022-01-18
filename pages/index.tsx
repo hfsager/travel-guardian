@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import Navbar from '@components/Navbar';
+import Navbar from '@components/NavBar';
 import styled from '@emotion/styled';
 import {Global, css} from '@emotion/react'
 
