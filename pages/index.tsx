@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import Navbar from '../components/Navbar';
+import Navbar from '@components/Navbar';
 import styled from '@emotion/styled';
 import {Global, css} from '@emotion/react'
 
@@ -12,7 +12,8 @@ margin-top: 50px;
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div>
+    <Global styles={css`hmtl body {padding: 0, margin: 0, font-family: Helvetica}, a {color: black, text-decoration: none}, * {box-sizing: border-box}`}/>
     <Navbar/>
     <Section>THIS IS HOME</Section>
     <h1>Heroku</h1>
