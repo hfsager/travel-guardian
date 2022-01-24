@@ -12,7 +12,6 @@ const Container = styled('header')`
   background-color: black;
   color: white;
   border-radius: 5px;
-  font-family: Helvetica;
 `;
 
 const Button = styled.button`
@@ -23,7 +22,6 @@ text-decoration: none;
 border-radius: 4px;
 color: white;
 background-color: black;
-font-family: Helvetica;
 font-size: 16px;
 &:hover {
   background-color: white;
@@ -57,7 +55,7 @@ const Navbar = () => {
     <div>
     <Container>
       <div>
-         <Link href="/test-pages/first-post">
+         <Link passHref href="/test-pages/first-post">
           <Anchor data-test-id='link-to-first-page'>TRAVEL GUARDIAN</Anchor>
      	   </Link>
         <Button onClick= {()=>alert("This Button Does Nothing")}>Sign Up As A Shelter</Button>
