@@ -1,24 +1,67 @@
 import type { NextPage } from 'next';
-import Navbar from '@components/NavBar';
+import Navbar from '@components/Navbar';
 import styled from '@emotion/styled';
-import {Global, css} from '@emotion/react'
+import { Global, css } from '@emotion/react';
+import SearchBar from '@components/SearchBar';
+import { faPaw } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import dynamic from 'next/dynamic';
 
-const Section = styled.section`
-font-family: Helvetica;
-text-align: center;
-font-size: 70px;
-margin-top: 50px;
-`
+const BackGroundImage = dynamic(() => import('@components/BackGroundImage'), {
+  ssr: false,
+});
 
 const Home: NextPage = () => {
   return (
-    <div>
-    <Global styles={css`hmtl body {padding: 0, margin: 0, font-family: Helvetica}, a {color: black, text-decoration: none}, * {box-sizing: border-box}`}/>
-    <Navbar/>
-    <Section>THIS IS HOME</Section>
-    <h1>Heroku</h1>
-    </div>
+    <>
+      <Wrapper>
+        <BackGroundImage />
+        <Global
+          styles={css`hmtl body {padding: 0, margin: 0, font-family: Helvetica}, a {color: black, text-decoration: none}, * {box-sizing: border-box}`}
+        />
+        <Navbar data-test-id="navbar" />
+        <Title>
+          <span>TRAVEL</span>
+          <FontAwesomeIcon icon={faPaw} size="1x" />
+          <span>MATE</span>
+        </Title>
+        <Subtitle>
+          <span> CONNECT WITH SHELTERS</span>
+        </Subtitle>
+        <SubtitleTwo>
+          <span>BECOME A TRAVEL GUARDIAN FOR ADOPTED ANIMALS</span>
+        </SubtitleTwo>
+        <SearchbarStyled>
+          <SearchBar />
+        </SearchbarStyled>
+      </Wrapper>
+    </>
   );
-};;
+};
 
 export default Home;
+
+const Wrapper = styled.div``;
+
+const Title = styled.h1`
+  font-family: Helvetica;
+  text-align: center;
+  font-size: 70px;
+  letter-spacing: 4px;
+  font-weight: 500;
+`;
+
+const Subtitle = styled(Title)`
+  font-size: 30px;
+  letter-spacing: 3px;
+  font-weight: 350;
+`;
+
+const SubtitleTwo = styled(Title)`
+  font-size: 20px;
+  margin-top: 30px;
+  letter-spacing: 3px;
+  font-weight: 350;
+`;
+
+const SearchbarStyled = styled(SubtitleTwo)``;
