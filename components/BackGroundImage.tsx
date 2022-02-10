@@ -32,7 +32,7 @@ const BackGroundImage = () => {
     return (
       <Image
         alt=""
-        src={`https://source.unsplash.com/${width}x${height}/?nature,water,mountains,landscape`}
+        src={`https://source.unsplash.com/${width}x${height}/?nature,water,mountains`}
         width={width}
         height={height}
       />
