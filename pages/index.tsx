@@ -1,12 +1,10 @@
 import type { NextPage } from 'next';
 import Navbar from '@components/Navbar';
 import styled from '@emotion/styled';
-import LoginForm from '@components/LoginForm';
 import { Global, css } from '@emotion/react';
 import SearchBar from '@components/SearchBar';
 import { faPaw } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import dynamic from 'next/dynamic';
 
 const Home: NextPage = () => {
   return (
