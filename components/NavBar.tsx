@@ -1,7 +1,38 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import { faPaw } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaw } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import LoginPopover from './LoginPopover';
+
+const Navbar = () => {
+  return (
+    <div>
+      <Container>
+        <div>
+          <NavLinks>
+            <FontAwesomeIcon
+              icon={faPaw}
+              size="2x"
+              style={{ marginRight: '20px' }}
+            />
+            <Link passHref href="/test-pages/first-post">
+              <Anchor data-test-id="link-to-first-page">TRAVEL MATE</Anchor>
+            </Link>
+            <Button onClick={() => alert('This Button Does Nothing')}>
+              Sign Up As A Shelter
+            </Button>
+          </NavLinks>
+        </div>
+        <ul>
+          <NavLinks>Sign Up</NavLinks>
+          <NavLinks>
+            <LoginPopover />
+          </NavLinks>
+        </ul>
+      </Container>
+    </div>
+  );
+};
 
 const Container = styled('header')`
   display: flex;
@@ -23,6 +54,7 @@ border-radius: 4px;
 color: white;
 background-color: black;
 font-size: 16px;
+margin-left: -25px;
 &:hover {
   background-color: white;
   color: black;
@@ -30,49 +62,24 @@ font-size: 16px;
   border-color: white;
 },
 
-`
+`;
 
 const Anchor = styled('a')`
-padding: 0px 20px;
-color: white;
-margin-right: 40px;
-&:hover{
+  padding: 0px 20px;
   color: white;
-  cursor: pointer;
-  
-}
-`
+  margin-right: 40px;
+  &:hover {
+    color: white;
+    cursor: pointer;
+  }
+  text-decoration: none;
+`;
 
 const NavLinks = styled('li')`
-list-style: none;
-display: inline-block;
-padding: 0px 20px;
-`
-
-
-const Navbar = () => {
-  return (
-    <div>
-    <Container>
-      <div>
-         <Link passHref href="/test-pages/first-post">
-          <Anchor data-test-id='link-to-first-page'>TRAVEL GUARDIAN</Anchor>
-     	   </Link>
-        <Button onClick= {()=>alert("This Button Does Nothing")}>Sign Up As A Shelter</Button>
-        </div>
-        <FontAwesomeIcon icon={faPaw} size="2x"/>
-      <ul>
-        <NavLinks style={{marginLeft: "20px"}}>Sign Up</NavLinks>
-        <NavLinks style={{marginLeft: "20px"}}>Take me Home</NavLinks>
-        <NavLinks style={{marginLeft: "20px"}}>My Dashboard</NavLinks>
-      </ul>
-    </Container>
-    </div>
-  );
-};
-
+  list-style: none;
+  display: inline-block;
+  padding: 0px 20px;
+  font-family: Helvetica;
+  text-decoration: none;
+`;
 export default Navbar;
-
-        {/* <span>
-      <Image alt="placeholder" layout='responsive' src="/BananaDog.jpeg" width={150} height={150} style={{borderRadius: '50%'}}></Image>
-      </span> */}
