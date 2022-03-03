@@ -1,29 +1,27 @@
 import type { NextPage } from 'next';
 import Navbar from '@components/Navbar';
 import styled from '@emotion/styled';
+import LoginForm from '@components/LoginForm';
 import { Global, css } from '@emotion/react';
 import SearchBar from '@components/SearchBar';
 import { faPaw } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import dynamic from 'next/dynamic';
 
-const BackGroundImage = dynamic(() => import('@components/BackGroundImage'), {
-  ssr: false,
-});
-
 const Home: NextPage = () => {
   return (
     <>
       <Wrapper>
-        <BackGroundImage />
         <Global
           styles={css`hmtl body {padding: 0, margin: 0, font-family: Helvetica}, a {color: black, text-decoration: none}, * {box-sizing: border-box}`}
         />
         <Navbar data-test-id="navbar" />
         <Title>
-          <span>TRAVEL</span>
-          <FontAwesomeIcon icon={faPaw} size="1x" />
-          <span>MATE</span>
+          <div data-test-id="header">
+            <span>TRAVEL</span>
+            <FontAwesomeIcon icon={faPaw} size="1x" />
+            <span>MATE</span>
+          </div>
         </Title>
         <Subtitle>
           <span> CONNECT WITH SHELTERS</span>

@@ -2,6 +2,37 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import { faPaw } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import LoginPopover from './LoginPopover';
+
+const Navbar = () => {
+  return (
+    <div>
+      <Container>
+        <div>
+          <NavLinks>
+            <FontAwesomeIcon
+              icon={faPaw}
+              size="2x"
+              style={{ marginRight: '20px' }}
+            />
+            <Link passHref href="/test-pages/first-post">
+              <Anchor data-test-id="link-to-first-page">TRAVEL MATE</Anchor>
+            </Link>
+            <Button onClick={() => alert('This Button Does Nothing')}>
+              Sign Up As A Shelter
+            </Button>
+          </NavLinks>
+        </div>
+        <ul>
+          <NavLinks>Sign Up</NavLinks>
+          <NavLinks>
+            <LoginPopover />
+          </NavLinks>
+        </ul>
+      </Container>
+    </div>
+  );
+};
 
 const Container = styled('header')`
   display: flex;
@@ -51,39 +82,4 @@ const NavLinks = styled('li')`
   font-family: Helvetica;
   text-decoration: none;
 `;
-
-const Navbar = () => {
-  return (
-    <div>
-      <Container>
-        <div>
-          <NavLinks>
-            <FontAwesomeIcon
-              icon={faPaw}
-              size="2x"
-              style={{ marginRight: '20px' }}
-            />
-            <Link passHref href="/test-pages/first-post">
-              <Anchor data-test-id="link-to-first-page">TRAVEL MATE</Anchor>
-            </Link>
-            <Button onClick={() => alert('This Button Does Nothing')}>
-              Sign Up As A Shelter
-            </Button>
-          </NavLinks>
-        </div>
-        <ul>
-          <NavLinks>Sign Up</NavLinks>
-          <NavLinks>Login</NavLinks>
-        </ul>
-      </Container>
-    </div>
-  );
-};
-
 export default Navbar;
-
-{
-  /* <span>
-      <Image alt="placeholder" layout='responsive' src="/BananaDog.jpeg" width={150} height={150} style={{borderRadius: '50%'}}></Image>
-      </span> */
-}
